@@ -1,16 +1,19 @@
-# <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" height="24"> FastAPI Template
+# <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" height="24"> FastAPI on Suga <img src="https://github.com/sugasrc.png" height="24">
 
-Modern async Python API with automatic OpenAPI docs, type validation, and high performance.
+Create and deploy your FastAPI apps to your Kubernetes cluster with Suga in minutes.
 
-## Local Development
+## Getting Started
 
-Install dependencies:
+### 1. Create your repository
+
+Click **Use this template** to create your own repository.
+
+### 2. Develop locally
+
 ```bash
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-```
-
-Start the server:
-```bash
 python main.py
 ```
 
@@ -18,25 +21,16 @@ Server runs on http://localhost:8000
 
 API docs available at http://localhost:8000/docs
 
-## File Structure
+### 3. Push your changes
+
+This triggers GitHub Actions to build and push your image to GitHub Container Registry.
+
+### 4. Update Suga
+
+In the Suga dashboard, update your service's **Image URI** to:
 
 ```
-├── main.py             # FastAPI app and routes
-├── requirements.txt    # Python dependencies
-└── Dockerfile          # Container build
+ghcr.io/YOUR_USERNAME/YOUR_REPO:latest
 ```
 
----
-
-## <img src="https://github.com/sugasrc.png" height="20"> Deploying with Suga
-
-1. Click **Use this template** to create your own repository
-
-2. Push changes - GitHub Actions builds and pushes to GHCR automatically
-
-3. In the Suga dashboard, update the **Image URI** for your service:
-   ```
-   ghcr.io/YOUR_USERNAME/YOUR_REPO:latest
-   ```
-
-4. Ensure your GHCR package is public
+> **Note:** Ensure your GHCR package is public.
