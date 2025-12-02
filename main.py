@@ -1,12 +1,17 @@
 import os
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello from FastAPI!"}
+    return FileResponse("static/index.html", media_type="text/html")
+
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.get("/health")
